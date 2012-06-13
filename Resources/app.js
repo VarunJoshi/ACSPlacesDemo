@@ -9,10 +9,9 @@
  * =============
  * 
  * Ver 1.0: Initial version - Thursday, June 7 2012
- *  
+ * 
+ * Ver 1.1: Wednesday, June 13 2012 
  */
-
-
 
 // this sets the background color of the master UIView (when there are no windows/tab groups on it)
 Titanium.UI.setBackgroundColor('#000');
@@ -21,17 +20,21 @@ Titanium.UI.setBackgroundColor('#000');
 var tabGroup = Titanium.UI.createTabGroup();
 
 
-var winadd = Titanium.UI.createWindow({ title:'add',  backgroundColor:'#fff', url:'add.js' }); 
-var tabadd = Titanium.UI.createTab({ icon:'KS_nav_views.png', title:'add', window:winadd });  
-tabGroup.addTab(tabadd);
+var winaddPlace = Titanium.UI.createWindow({ title:'Add Place',  backgroundColor:'#fff', url:'addplace.js' }); 
+var tabaddPlace = Titanium.UI.createTab({ icon:'KS_nav_views.png', title:'Add Place', window:winaddPlace });  
+tabGroup.addTab(tabaddPlace);
 
 
-var wintable = Titanium.UI.createWindow({ title:'table',  backgroundColor:'#fff', url:'table.js' }); 
-var tabtable = Titanium.UI.createTab({ icon:'KS_nav_views.png', title:'table', window:wintable });  
+var winaddUser = Titanium.UI.createWindow({ title:'Add User',  backgroundColor:'#fff', url:'adduser.js' }); 
+var tabUser = Titanium.UI.createTab({ icon:'KS_nav_views.png', title:'Add User', window:winaddUser });  
+tabGroup.addTab(tabUser);
+
+var wintable = Titanium.UI.createWindow({ title:'Table',  backgroundColor:'#fff', url:'table.js' }); 
+var tabtable = Titanium.UI.createTab({ icon:'KS_nav_views.png', title:'Table', window:wintable });  
 tabGroup.addTab(tabtable);
 
-var winmap = Titanium.UI.createWindow({ title:'map',  backgroundColor:'#fff', url:'map.js' }); 
-var tabmap = Titanium.UI.createTab({ icon:'KS_nav_views.png', title:'map', window:winmap });  
+var winmap = Titanium.UI.createWindow({ title:'Map',  backgroundColor:'#fff', url:'map.js' }); 
+var tabmap = Titanium.UI.createTab({ icon:'KS_nav_views.png', title:'Map', window:winmap });  
 tabGroup.addTab(tabmap);
 
 // open tab group

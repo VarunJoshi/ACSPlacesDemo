@@ -78,7 +78,7 @@ var uiCreate = (function() {
         content.add(createPlaceButton);
 
         function submitForm() {
-            createPlaceButton.hide();
+            //createPlaceButton.hide();
 
             Cloud.Places.create({
                 name : name.value,
@@ -93,7 +93,7 @@ var uiCreate = (function() {
                 } else {
                     error(e);
                 }
-                createPlaceButton.show();
+               // createPlaceButton.show();
             });
         }
 
