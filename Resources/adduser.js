@@ -34,6 +34,7 @@ var uiCreateUser = (function() {
             left : 10,
             right : 10,
             height : 40,
+            autocapitalization : Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
             borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
             passwordMask : true
         });
@@ -45,6 +46,7 @@ var uiCreateUser = (function() {
             left : 10,
             right : 10,
             height : 40,
+            autocapitalization : Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
             borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
             passwordMask : true
         });
@@ -56,6 +58,7 @@ var uiCreateUser = (function() {
             left : 10,
             right : 10,
             height : 40,
+            autocapitalization : Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
             borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED
         });
         content.add(firstName);
@@ -66,9 +69,21 @@ var uiCreateUser = (function() {
             left : 10,
             right : 10,
             height : 40,
+            autocapitalization : Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
             borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED
         });
         content.add(lastName);
+        
+        var emailAddress = Ti.UI.createTextField({
+            hintText : 'Email Address',
+            top : 10,
+            left : 10,
+            right : 10,
+            height : 40,
+            autocapitalization : Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
+            borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED  
+        });
+        content.add(emailAddress);
 
         var button = Ti.UI.createButton({
             title : 'Create',
@@ -94,12 +109,13 @@ var uiCreateUser = (function() {
                 password : password.value,
                 password_confirmation : confirmPassword.value,
                 first_name : firstName.value,
-                last_name : lastName.value
+                last_name : lastName.value,
+                email: emailAddress.value
             }, function(e) {
                 if (e.success) {
                     var user = e.users[0];
-                    alert('Created! You are now logged in as ' + user.id);
-                    username.value = password.value = confirmPassword.value = firstName.value = lastName.value = '';
+                    alert('Created! You are now logged in as ' + user.first_name +" "+ user.last_name);//user.id);
+                    username.value = password.value = confirmPassword.value = firstName.value = lastName.value = emailAddress.value = '';
                 } else {
                     error(e);
                 }

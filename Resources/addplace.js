@@ -88,7 +88,7 @@ var uiCreate = (function() {
                 postal_code : postalCode.value
             }, function(e) {
                 if (e.success) {
-                    alert('Created!');
+                    alert('Created ' +e.name);
                     name.value = address.value = city.value = state.value = postalCode.value = '';
                 } else {
                     error(e);
