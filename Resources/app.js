@@ -20,14 +20,15 @@ Titanium.UI.setBackgroundColor('#000');
 var tabGroup = Titanium.UI.createTabGroup();
 
 
-var winaddPlace = Titanium.UI.createWindow({ title:'Add Place',  backgroundColor:'#fff', url:'addplace.js' }); 
-var tabaddPlace = Titanium.UI.createTab({ icon:'KS_nav_views.png', title:'Add Place', window:winaddPlace });  
-tabGroup.addTab(tabaddPlace);
-
 
 var winaddUser = Titanium.UI.createWindow({ title:'Add User',  backgroundColor:'#fff', url:'adduser.js' }); 
 var tabUser = Titanium.UI.createTab({ icon:'KS_nav_views.png', title:'Add User', window:winaddUser });  
 tabGroup.addTab(tabUser);
+
+var winaddPlace = Titanium.UI.createWindow({ title:'Add Place',  backgroundColor:'#fff', url:'addplace.js' }); 
+var tabaddPlace = Titanium.UI.createTab({ icon:'KS_nav_views.png', title:'Add Place', window:winaddPlace });  
+tabGroup.addTab(tabaddPlace);
+
 
 var wintable = Titanium.UI.createWindow({ title:'Table',  backgroundColor:'#fff', url:'table.js' }); 
 var tabtable = Titanium.UI.createTab({ icon:'KS_nav_views.png', title:'Table', window:wintable });  
